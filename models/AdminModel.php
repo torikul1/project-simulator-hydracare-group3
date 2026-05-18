@@ -6,7 +6,6 @@ class AdminModel {
         $this->db = $dbConn;
     }
 
-    // 1. Admin Dashboard Metrics
     public function getDashboardStats() {
         $stats = [];
         
@@ -25,7 +24,6 @@ class AdminModel {
         return $stats;
     }
 
-    // 2. Category Management
     public function getAllCategories() {
         $stmt = $this->db->query("SELECT * FROM categories ORDER BY id DESC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -52,7 +50,6 @@ class AdminModel {
         return $stmt->fetch(PDO::FETCH_ASSOC)['total'] > 0;
     }
 
-    // 3. Medicine Management
     public function getAllMedicines() {
         $stmt = $this->db->query("SELECT m.*, c.name as category_name FROM medicines m LEFT JOIN categories c ON m.category_id = c.id ORDER BY m.id DESC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -90,7 +87,6 @@ class AdminModel {
         return $stmt->fetch(PDO::FETCH_ASSOC)['total'] > 0;
     }
 
-    // 4. Delete Customer (Cascade Remove Cart & Orders)
     public function getAllCustomers() {
         $stmt = $this->db->prepare("SELECT * FROM users WHERE role = 'customer' ORDER BY id DESC");
         $stmt->execute();
@@ -99,9 +95,7 @@ class AdminModel {
 
     public function deleteCustomerCascade($user_id) {
         try {
-            $this->db->beginTransaction();
-            
-            // Wipe dependencies first so foreign key integrity rules don't crash XAMPP
+            $this->db-
             $stmt1 = $this->db->prepare("DELETE FROM cart WHERE user_id = ?");
             $stmt1->execute([$user_id]);
 
@@ -133,7 +127,7 @@ class AdminModel {
         }
     }
 
-    // 5. Purchase Requests & History
+    
     public function getAllOrders() {
         $stmt = $this->db->query("SELECT o.*, u.name as customer_name FROM orders o JOIN users u ON o.user_id = u.id ORDER BY o.id DESC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
