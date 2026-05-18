@@ -1,0 +1,42 @@
+/* Sidebar Styles */
+.sidebar {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.sidebar .nav-link {
+    color: white;
+    padding: 12px 20px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+.sidebar .nav-link:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+}
+.sidebar .nav-link.active {
+    background: rgba(255,255,255,0.3);
+}
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+.main-content {
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+.card-stats {
+    transition: transform 0.3s;
+}
+.card-stats:hover {
+    transform: translateY(-5px);
+}
+.badge {
+    font-size: 0.85rem;
+}
+.table td {
+    vertical-align: middle;
+}
+.card-header {
+    background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+}
