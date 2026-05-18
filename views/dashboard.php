@@ -1,5 +1,4 @@
 <?php
-// Safe check to make sure variables exist even if database counts return zero or empty rows
 if (!isset($stats) || !$stats) {
     $stats = ['medicines' => 0, 'categories' => 0, 'customers' => 0, 'pending_orders' => 0];
 }
@@ -8,16 +7,7 @@ if (!isset($stats) || !$stats) {
 <html>
 <head>
     <title>Admin Dashboard</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 20px; color: #333; }
-        nav { background: #333; padding: 15px; border-radius: 5px; }
-        nav a { margin-right: 15px; text-decoration: none; font-weight: bold; color: #fff; }
-        nav a:hover { color: #ddd; }
-        .card-container { margin-top: 20px; }
-        .card { background: #fff; padding: 20px; display: inline-block; margin: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 180px; text-align: center; }
-        .card h3 { margin: 0 0 10px 0; color: #555; }
-        .card p { font-size: 24px; font-weight: bold; margin: 0; color: #007BFF; }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../views/css/admin.css">
 </head>
 <body>
     <h2>Admin Management System</h2>

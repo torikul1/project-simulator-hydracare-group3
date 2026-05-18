@@ -1,12 +1,12 @@
 <?php
-// Force error visibility immediately
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
 
-// Using absolute directory maps so D: partition finds files flawlessly
+
 require_once dirname(__DIR__) . '/config/database.php';
 require_once dirname(__DIR__) . '/models/AdminModel.php';
 
@@ -34,7 +34,7 @@ class AdminController {
         switch ($page) {
             case 'dashboard':
                 $stats = $this->model->getDashboardStats();
-                // FIXED: Changed from admin_dashboard.php to dashboard.php to match your VS Code sidebar exactly
+                
                 include __DIR__ . '/../views/dashboard.php';
                 break;
 
@@ -152,7 +152,6 @@ class AdminController {
     }
 }
 
-// Instantiate and Run Controller Route
 $controller = new AdminController();
 $controller->invoke();
 ?>
