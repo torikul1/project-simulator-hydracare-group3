@@ -1,0 +1,304 @@
+ /* ==========================================================================
+           🎨 PROFESSIONALLY ALIGNED MODERN VANILLA CSS (NO FRAMEWORKS)
+           ========================================================================== */
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #2ecc71;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           🧱 NAVBAR LAYOUT (ROW CSS FLEXBOX)
+           ========================================================================== */
+        .navbar {
+            background-color: var(--dark-bg);
+            padding: 0.8rem 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .navbar-brand span {
+            color: white;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-left: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* System Action Buttons Group */
+        .auth-buttons-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.75rem;
+            border-left: 1px solid #334155;
+            padding-left: 1.5rem;
+        }
+
+        .btn-login {
+            color: white !important;
+            border: 1px solid #475569;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            background: transparent;
+        }
+
+        .btn-login:hover {
+            background: #1e293b;
+            border-color: #64748b;
+        }
+
+        .btn-signup {
+            color: white !important;
+            background-color: var(--primary-color);
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            border: 1px solid transparent;
+        }
+
+        .btn-signup:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .user-welcome-tag {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+
+        .user-welcome-tag strong {
+            color: var(--secondary-color);
+        }
+
+        /* ==========================================================================
+           🚀 HERO SHOWCASE CONTAINER
+           ========================================================================== */
+        .hero-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-content p {
+            color: #94a3b8;
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-cta-btn {
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--secondary-color);
+            color: #0f172a;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-shadow: 0 4px 14px rgba(46, 204, 113, 0.3);
+            transition: var(--transition);
+        }
+
+        .hero-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+            background-color: #27ae60;
+        }
+
+        /* ==========================================================================
+           📦 FEATURED INFRASTRUCTURE CARDS (ROW LAYOUT)
+           ========================================================================== */
+        .main-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .features-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            flex: 1; /* Makes cards grow equally in the row */
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -8px rgb(0 0 0 / 0.1);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================================================
+           ⚡ STORE PREVIEW SECTIONS
+           ========================================================================== */
+        .section-header {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .section-header a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .store-fallback-msg {
+            background-color: white;
+            border: 1px dashed #cbd5e1;
+            padding: 3rem;
+            text-align: center;
+            border-radius: 12px;
+            color: var(--text-muted);
+        }
+
+        /* ==========================================================================
+           🐾 FOOTER SUITE
+           ========================================================================== */
+        .footer {
+            background-color: var(--dark-bg);
+            color: #94a3b8;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+            margin-top: 5rem;
+        }

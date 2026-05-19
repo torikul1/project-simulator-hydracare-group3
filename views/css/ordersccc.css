@@ -1,0 +1,340 @@
+/* ==========================================================================
+   HydraCare Shopping Suite Master Stylesheet
+   Targets: checkout.php and order_success.php
+   ========================================================================== */
+
+/* 1. Global Reset & Base Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #334155;
+    min-height: 100vh;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 2. Primary Layout Framework */
+.container {
+    width: 100%;
+    max-width: 700px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+                0 10px 15px -3px rgba(0, 0, 0, 0.03), 
+                0 20px 25px -5px rgba(0, 0, 0, 0.02);
+}
+
+h2 {
+    color: #0f172a;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 3. Invoice / Statement Components */
+.invoice-box {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.invoice-box h3 {
+    font-size: 1rem;
+    color: #475569;
+    font-weight: 600;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.invoice-table th {
+    color: #64748b;
+    padding: 10px 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.invoice-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+    font-size: 0.925rem;
+}
+
+.invoice-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.invoice-box h4 {
+    text-align: right;
+    font-size: 1.25rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* 4. Form Control System */
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #0f172a;
+    font-size: 0.9rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #0f172a;
+    font-size: 0.95rem;
+    resize: vertical;
+    outline: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* 5. Custom Radio Selection Grid */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0;
+    font-weight: 500;
+    color: #334155;
+    cursor: pointer;
+    font-size: 0.95rem;
+    padding: 14px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: all 0.15s ease;
+}
+
+.radio-group label:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* Dynamic styling selection state if input radio checks */
+.radio-group label:has(input[type="radio"]:checked) {
+    background-color: #eff6ff;
+    border-color: #3b82f6;
+    color: #1e40af;
+}
+
+.radio-group input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+/* 6. System Execution Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+    gap: 16px;
+}
+
+.btn-secondary {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+}
+
+.btn-secondary:hover {
+    color: #0f172a;
+    background-color: #f1f5f9;
+}
+
+.btn-success, .btn-primary {
+    border: none;
+    padding: 14px 32px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-success {
+    background-color: #10b981;
+    color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.15);
+}
+
+.btn-success:hover {
+    background-color: #059669;
+    box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.2);
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.15);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 10px 15px -3px rgba(29, 78, 216, 0.2);
+    transform: translateY(-1px);
+}
+
+/* 7. Specific Layout Context: Order Success Variant */
+.success-container {
+    max-width: 580px;
+    text-align: center;
+}
+
+.success-card h2 {
+    color: #10b981;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.success-card > p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+}
+
+.summary-details {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.summary-details p {
+    margin-bottom: 14px;
+    font-size: 0.925rem;
+    color: #475569;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.summary-details p:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.summary-details strong {
+    color: #0f172a;
+}
+
+.badge-pending {
+    background-color: #ffedd5;
+    color: #c2410c;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Success Product Rows */
+.success-card h3 {
+    text-align: left;
+    font-size: 1rem;
+    color: #0f172a;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+.success-card ul {
+    list-style-type: none;
+    text-align: left;
+    margin-bottom: 32px;
+}
+
+.success-card ul li {
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 0.925rem;
+    color: #334155;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 8. Responsive Design Fallbacks */
+@media (max-width: 540px) {
+    .container {
+        padding: 24px;
+    }
+    .action-buttons {
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+    .btn-secondary, .btn-success, .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+}

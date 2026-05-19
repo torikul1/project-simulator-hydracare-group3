@@ -1,0 +1,141 @@
+/* views/css/cart_row_layout.css */
+
+/* Row Layout Configuration Architecture */
+.row-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.main-inventory-area {
+    flex: 1;
+    min-width: 300px;
+}
+
+.section-heading {
+    font-size: 1.2rem;
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Custom Grid Alignment for Medicine Cards inside Cart interface */
+.custom-med-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.med-item-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.med-item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+}
+
+.med-card-img {
+    background: #f8fafc;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.med-card-img img {
+    max-height: 120px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.med-card-details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.med-card-details h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.05rem;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.med-vendor, .med-cat {
+    margin: 0 0 5px 0;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.med-vendor span, .med-cat span {
+    color: #334155;
+    font-weight: 500;
+}
+
+.med-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px dashed #e2e8f0;
+}
+
+.price-lbl {
+    font-weight: 700;
+    color: #10b981;
+    font-size: 1.1rem;
+}
+
+.add-to-queue-btn {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.15s;
+}
+
+.add-to-queue-btn:hover {
+    background: #1d4ed8;
+}
+
+.out-stock-lbl {
+    font-size: 0.75rem;
+    color: #ef4444;
+    background: #fef2f2;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.empty-alert {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    background: #ffffff;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    color: #64748b;
+}
